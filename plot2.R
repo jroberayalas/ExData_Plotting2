@@ -5,7 +5,8 @@ SCC <- readRDS("Data/Source_Classification_Code.rds")
 # Transform year variable to factor
 NEI <- transform(NEI, year = factor(year))
 
-# Use dplyr library to group by year and summarise the sum of Emissions
+# Use dplyr library to filter the rows that belong to the Baltimore City, 
+# group by year and summarise the sum of Emissions
 library(dplyr)
 NEI <- tbl_df(NEI)
 sums.summary <- NEI %>%
