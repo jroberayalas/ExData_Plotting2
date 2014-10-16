@@ -16,5 +16,6 @@ sums.summary <- NEI %>%
 png(file = "ExData_Plotting2/plot1.png", bg = "transparent")
 with(sums.summary, plot(year, sums, 
                         xlab = "Year",
-                        ylab = expression("Total emissions from PM"[2.5])))
+                        ylab = expression("Total emissions from PM"[2.5]),
+                        main = "Total emissions in the USA"))
 dev.off()
