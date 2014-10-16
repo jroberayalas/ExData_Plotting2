@@ -18,8 +18,9 @@ sums.summary <- NEI %>%
 library(ggplot2)
 png(file = "ExData_Plotting2/plot3.png", bg = "transparent", width = 693, height = 501)
 theme_set(theme_gray(base_size = 18))
-qplot(data = sums.summary, x = year, y = log10(sums), facets = type ~ ., col = type) + 
+qplot(data = sums.summary, x = year, y = log10(sums), col = type) + 
     geom_point(size = 3) +
+    geom_line(aes(group = type)) +
     xlab("Year") +
     ylab(expression("Log 10 of total emissions from PM"[2.5])) +
     ggtitle("Total emissions by type in the Baltimore City, Maryland")
