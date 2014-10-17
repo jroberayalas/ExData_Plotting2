@@ -5,7 +5,7 @@ SCC <- readRDS("Data/Source_Classification_Code.rds")
 # Transform year variable to factor
 NEI <- transform(NEI, year = factor(year))
 
-# Find emissions from coal combustion-related sources
+# Find emissions from motor vehicle sources
 vehicle <- SCC$SCC[grep("[Vv]ehicle", SCC$EI.Sector)]
 
 # Use dplyr library to filter the rows that belong to emissions from motor vehicle sources 
