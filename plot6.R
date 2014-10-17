@@ -21,13 +21,13 @@ sums.summary <- NEI %>%
 library(ggplot2)
 png(file = "ExData_Plotting2/plot6.png", bg = "transparent", width = 693, height = 501)
 theme_set(theme_gray(base_size = 18))
-qplot(data = sums.summary, x = year, y = log10(sums), col = fips) + 
+g <- ggplot(data = sums.summary, aes(x = year, y = log10(sums), col = fips)) + 
     geom_point(size = 3) +
     geom_line(aes(group = fips)) +
     xlab("Year") +
     ylab(expression("Log 10 of total emissions from PM"[2.5])) +
     ggtitle("Total emissions from motor vehicle sources") + 
-    scale_fill_discrete(name = "City", 
-                        breaks = c("06037", "24510"), 
+    scale_color_discrete(name = "City", 
                         labels = c("Los Angeles", "Baltimore"))
+print(g)
 dev.off()
