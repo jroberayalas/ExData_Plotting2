@@ -21,4 +21,3 @@ with(sums.summary, plot(year, sums,
                         ylab = expression("Total emissions from PM"[2.5]),
                         main = "Total emissions in the Baltimore City, Maryland"))
 dev.off()
-

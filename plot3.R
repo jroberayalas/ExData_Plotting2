@@ -2,7 +2,7 @@
 NEI <- readRDS("Data/summarySCC_PM25.rds")
 SCC <- readRDS("Data/Source_Classification_Code.rds")
 
-# Transform year variable to factor
+# Transform type and year variables to factor
 NEI <- transform(NEI, type = factor(type), year = factor(year))
 
 # Use dplyr library to filter the rows that belong to the Baltimore City, 
@@ -25,5 +25,3 @@ qplot(data = sums.summary, x = year, y = log10(sums), col = type) +
     ylab(expression("Log 10 of total emissions from PM"[2.5])) +
     ggtitle("Total emissions by type in the Baltimore City, Maryland")
 dev.off()
-
-
